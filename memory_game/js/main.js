@@ -28,13 +28,12 @@ var cardsInPlay = [];
 
 var checkForMatch = function() {
 
-
-if (cardsInPlay === 2){
+if (cardsInPlay.length === 2){
   if (cardsInPlay[0] === cardsInPlay[1]) {
-console.log("You found a match!");
+alert("You found a match!");
 }
 else {
-console.log("Sorry, try again.");
+alert("Sorry, try again");
 }
 }
 };
@@ -47,12 +46,9 @@ this.setAttribute('src', card.cardImage);
 this.setAttribute("class", "clicked");
 console.log(this);
 cardsInPlay.push(card.rank);
-
-  if (cardsInPlay.length === 2) {
-
+if (cardsInPlay.length === 2) {
     checkForMatch();
-}
-
+  };
 };
 
  var createBoard = function() {
@@ -67,8 +63,7 @@ var board = document.getElementById("game-board");
 cardElement.addEventListener('click', flipCard);
   board.appendChild(cardElement);
 
- }
-
 };
 
- createBoard()
+};
+createBoard();
